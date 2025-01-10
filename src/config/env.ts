@@ -17,4 +17,5 @@ export const env = {
   mongoUri: process.env.MONGO_URI as string,
   frontendUrl: process.env.FRONTEND_URL as string,
   backendUrl: process.env.BACKEND_URL as string,
+  jwtSecret: process.env.JWT_SECRET as string,
 };

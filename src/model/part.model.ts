@@ -3,7 +3,7 @@ import { model, Schema } from "mongoose";
 import { IPart } from "../types";
 
 const partSchema = new Schema<IPart>({
-  name: { type: String, required: true },
+  name: { type: String, required: true, unique: true },
 });
 
 const Part = model<IPart>("Part", partSchema);

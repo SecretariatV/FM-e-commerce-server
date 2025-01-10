@@ -26,6 +26,7 @@ interface IPart extends Document {
 
 interface IUser extends Document {
   name: string;
+  email: string;
 }
 
 export type { IError, IProduct, IPart, IUser };

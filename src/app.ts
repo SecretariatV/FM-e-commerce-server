@@ -6,6 +6,9 @@ import { connectDB, env, swaggerDocs } from "./config";
 import { errorHandler, requestLogger } from "./middleware";
 import { IError } from "./types";
 
+import authRouter from "./routes/auth.route";
+import partRouter from "./routes/part.route";
+
 const corsOption = {
   origin: [
     env.frontendUrl || "http://localhost:3000",
@@ -29,6 +32,9 @@ app.use(cors(corsOption));
 app.use(requestLogger);
 
 swaggerDocs(app);
+
+app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/part", partRouter);
 
 app.get("/api", (_req: Request, res: Response) => {
   res.json({ message: "Server is running" });
